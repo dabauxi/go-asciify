@@ -57,4 +57,4 @@ CLI to create ascii images  e.g.
 
 ## How to use
 
-`./go-asciify -image=<imagepath> -width=100`
+`./go-asciify -image=<imagepath> -width=<pixel>`
