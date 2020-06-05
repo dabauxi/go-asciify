@@ -39,8 +39,12 @@ func main() {
 		fmt.Print("error:")
 		fmt.Print(err)
 	}
+
 	resizedImg := resize.Resize(uint(*width), 0, img, resize.Lanczos3)
-	resizedGrayScaleImg := convertToGrayScale(resizedImg)
+	bounds := resizedImg.Bounds()
+	downscaledHeight := uint(float64(bounds.Max.Y) * 0.5)
+	downscaledHeightImg := resize.Resize(uint(bounds.Max.X), downscaledHeight, resizedImg, resize.Lanczos3)
+	resizedGrayScaleImg := convertToGrayScale(downscaledHeightImg)
 	convertToASCII(resizedGrayScaleImg)
 }
 
