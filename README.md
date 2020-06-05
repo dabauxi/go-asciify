@@ -1,4 +1,4 @@
-# go-ascii
+# go-asciify
 
 CLI to create ascii images  e.g.
 
